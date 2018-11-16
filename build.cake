@@ -76,18 +76,18 @@ Task("BuildAll")
     .Does(() =>
 	{
         //##### Build the AdminExperience project
-		var externalSolutions = GetFiles(adminExpDir.ToString() + "/*.sln");
-		Information("Found {0} solutions.", externalSolutions.Count);
+        var externalSolutions = GetFiles(adminExpDir.ToString() + "/*.sln");
+        Information("Found {0} solutions.", externalSolutions.Count);
         BuildSolution(externalSolutions.First().ToString());
-        
+
         //##### Build the ClientDependency project
         externalSolutions = GetFiles(cdfDir.ToString() + "/ClientDependency.DNN.sln");
-		Information("Found {0} solutions.", externalSolutions.Count);
+        Information("Found {0} solutions.", externalSolutions.Count);
         BuildSolution(externalSolutions.First().ToString());
-        
+
         //##### Build the CKEditor project
         externalSolutions = GetFiles(ckDir.ToString() + "/*.sln");
-		Information("Found {0} solutions.", externalSolutions.Count);
+        Information("Found {0} solutions.", externalSolutions.Count);
         BuildSolution(externalSolutions.First().ToString());
 	});
         
