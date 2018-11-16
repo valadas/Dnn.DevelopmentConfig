@@ -48,6 +48,10 @@ Task("SetupDevEnvironment")
         GitClone("https://github.com/" + githubUser + "/ClientDependency.git", cdfDir);
         GitClone("https://github.com/" + ownerOfCkEditor + "/CKEditorProvider.git", ckDir);
     });
+
+Task("SetupReferences")
+    .IsDependentOn("NugetInstall");
+    .IsDependentOn("NugetUpdate");
     
 Task("NugetInstall")
     .Does(() =>
