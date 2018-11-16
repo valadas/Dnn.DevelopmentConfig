@@ -50,7 +50,7 @@ Task("SetupDevEnvironment")
     });
 
 Task("SetupReferences")
-    .IsDependentOn("NugetInstall");
+    .IsDependentOn("NugetInstall")
     .IsDependentOn("NugetUpdate");
     
 Task("NugetInstall")
